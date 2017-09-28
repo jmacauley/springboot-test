@@ -1,0 +1,16 @@
+# Configuration for database.
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sense-n-rm
+    driver-class-name: org.postgresql.Driver
+    username: sense-n-rm
+    password: bubbles
+    continue-on-error: true
+
+#spring.jpa.hibernate.ddl-auto=create
+#spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.hibernate.ddl-auto=validate

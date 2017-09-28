@@ -25,6 +25,8 @@ public class Application {
    * @throws java.lang.InterruptedException
    */
   public static void main(String[] args) throws ExecutionException, InterruptedException {
+    log.info("[main] Starting.");
+    
     ApplicationContext context = SpringApplication.run(Application.class, args);
 
     // Dump some runtime information.
