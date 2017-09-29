@@ -4,7 +4,12 @@ package ca.blackacorn.dev.springboot;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 import java.util.concurrent.ExecutionException;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
+import net.es.nsi.dds.lib.client.RestClient;
+import net.es.nsi.dds.lib.constants.Nsi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -26,7 +31,7 @@ public class Application {
    */
   public static void main(String[] args) throws ExecutionException, InterruptedException {
     log.info("[main] Starting.");
-    
+
     ApplicationContext context = SpringApplication.run(Application.class, args);
 
     // Dump some runtime information.
@@ -50,6 +55,12 @@ public class Application {
       }
     }
     );
+
+    RestClient client = new RestClient();
+    Client httpClient = client.get();
+    WebTarget webTarget = httpClient.target("http://localhost:8401/dds").path("subscriptions");
+    Response response = webTarget.request(Nsi.NSI_DDS_V1_XML).get();
+    log.info("[main] response " + response.getStatusInfo());
 
     // Loop until we are told to shutdown.
     while (keepRunning) {
