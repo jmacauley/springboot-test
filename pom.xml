@@ -27,7 +27,19 @@
       <artifactId>nsi-dds-lib</artifactId>
       <version>0.1.0</version>
     </dependency>
-    
+
+    <dependency>
+      <groupId>net.es.sense</groupId>
+      <artifactId>driver</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>net.es.sense</groupId>
+      <artifactId>nsi-driver</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
