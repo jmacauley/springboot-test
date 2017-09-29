@@ -63,3 +63,14 @@ spring:
     username: sense-n-rm
     password: bubbles
 
+#spring:
+#  jpa:
+#    generate-ddl: true
+#    hibernate:
+#      ddl-auto: create
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/sense-n-rm
+#    driver-class-name: org.postgresql.Driver
+#    username: sense-n-rm
+#    password: bubbles
+#    continue-on-error: true
